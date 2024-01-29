@@ -382,8 +382,8 @@ print(new_pos)
 print('==== Rebalance ===========================================================')
 date = new_pos.name.date()
 print(f'Rebalance the position at {date}? (y/n)')
-#confirm = input()
-confirm = 'y'
+confirm = input()
+#confirm = 'y'
 if confirm == 'y':
     for symbol,pos in zip(new_pos.index,new_pos):
         trader.modify_position(symbol,pos)
