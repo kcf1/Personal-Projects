@@ -331,7 +331,7 @@ print()
 
 
 print('==== Load Config =========================================================')
-config_url = sys.argv[0]
+config_url = 'config/ftmo_demo.json'
 with open(config_url) as f:
     config = json.load(f)
 print(config)
@@ -382,7 +382,8 @@ print(new_pos)
 print('==== Rebalance ===========================================================')
 date = new_pos.name.date()
 print(f'Rebalance the position at {date}? (y/n)')
-confirm = input() if sys.argv[1] not in ('y','n') else sys.argv[1]
+#confirm = input()
+confirm = 'y'
 if confirm == 'y':
     for symbol,pos in zip(new_pos.index,new_pos):
         trader.modify_position(symbol,pos)
