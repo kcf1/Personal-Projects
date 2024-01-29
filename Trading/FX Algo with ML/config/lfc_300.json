@@ -1,0 +1,9 @@
+{
+    "leverage": 100,
+    "acc_size": 300,
+    "lot_size": 100000,
+
+    "account": 51208388,
+    "password": "",
+    "server": ""
+}

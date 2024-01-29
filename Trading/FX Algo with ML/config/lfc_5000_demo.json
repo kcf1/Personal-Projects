@@ -1,0 +1,9 @@
+{
+    "leverage": 5,
+    "acc_size": 5000,
+    "lot_size": 100000,
+
+    "account": 12572154,
+    "password": "w5A)Xdxv3",
+    "server": "BlueberryMarkets-Demo"
+}
