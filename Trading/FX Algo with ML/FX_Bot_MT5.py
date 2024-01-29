@@ -9,6 +9,7 @@ import pickle
 import MetaTrader5 as mt5
 from collections import namedtuple
 import json
+import sys
 
 from ta.trend import MACD
 from ta.momentum import RSIIndicator
@@ -327,8 +328,10 @@ print('Trading 18x is optimal but 5x is conservative')
 print()
 
 # %%
+
+
 print('==== Load Config =========================================================')
-config_url = 'config/ftmo_demo.json'
+config_url = sys.argv[0]
 with open(config_url) as f:
     config = json.load(f)
 print(config)
@@ -379,7 +382,7 @@ print(new_pos)
 print('==== Rebalance ===========================================================')
 date = new_pos.name.date()
 print(f'Rebalance the position at {date}? (y/n)')
-confirm = input()
+confirm = input() if sys.argv[1] not in ('y','n') else sys.argv[1]
 if confirm == 'y':
     for symbol,pos in zip(new_pos.index,new_pos):
         trader.modify_position(symbol,pos)
